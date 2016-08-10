@@ -1,0 +1,87 @@
+.modal-lg {
+    width: 95%;
+}
+.cover-galeri{
+    height: 220px;
+}
+.item-desc {
+    background-color: rgba(232, 84, 140, 0.75);
+    color: white;
+    position: absolute;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1;
+    bottom: 0rem;
+    left: 1.7rem;
+    right: 1.7rem;
+}
+.item-galeri-delete {
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+    color: #d9534f;
+    position: absolute;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1;
+    top: 1px;
+    border: 2px solid #3c8dbc;
+    /* right: 1rem; */
+}
+.item-galeri-edit {
+    background-color: #ffffff;
+    opacity: 0.8;
+    color: #3c8dbc;
+    position: absolute;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1;
+    top: 1px;
+    right: 1.7rem;
+    border: 2px solid #3c8dbc;
+}
+.item-galeri-edit:hover{
+    background-color: rgba(0,0,0,0.5);
+    opacity: 1;
+}
+.item-galeri-delete:hover{
+    background-color: rgba(0,0,0,0.5);
+    opacity: 1;
+}
+.image-upload {
+
+}
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    width: 100px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1088px) {
+    .cover-galeri{
+        height: 180px;
+    }
+}
+@media screen and (max-width:1130px) {
+    .cover-galeri{
+        height: 160px;
+    }
+}
+@media screen and (max-width:1101px) {
+    .cover-galeri{
+        height: 175px;
+    }
+}
+@media screen and (max-width:990px) {
+    .cover-galeri{
+        height: 90px;
+    }
+}
+
