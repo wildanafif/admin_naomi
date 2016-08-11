@@ -45,7 +45,7 @@
                                     <input type="text" class="form-control" name="judul_galeri"
                                            placeholder="Judul galeri" value="<?php echo $title_galeri ?>" required></div>
                                 <div class="form-group"><label for="isi_layanan">Deskripsi galeri</label>
-                                    <input type="text" name="id_galeri" value="<?php echo $id_galeri; ?>">
+                                    <input type="hidden" name="id_galeri" value="<?php echo $id_galeri; ?>">
                                     <textarea class="ckeditor" name="deskripsi_galeri" id="editor1"
                                     required><?php echo $deskripsi_galeri; ?></textarea> <script type="text/javascript">
                                         CKEDITOR.replace('editor1',

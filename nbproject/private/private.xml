@@ -3,6 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/project/naomi/application/models/tentang_kami.php</file>
+            <file>file:/C:/xampp/htdocs/project/naomi/application/views/admin/artikel.php</file>
+            <file>file:/C:/xampp/htdocs/project/naomi/application/models/beranda.php</file>
+            <file>file:/C:/xampp/htdocs/project/naomi/application/views/admin/header.php</file>
+            <file>file:/C:/xampp/htdocs/project/naomi/application/controllers/administrator_naomi.php</file>
+            <file>file:/C:/xampp/htdocs/project/naomi/application/views/admin/slider.php</file>
+            <file>file:/C:/xampp/htdocs/project/naomi/application/views/admin/dahboard.php</file>
+            <file>file:/C:/xampp/htdocs/project/naomi/application/controllers/admin_galeri.php</file>
+            <file>file:/C:/xampp/htdocs/project/naomi/assets/js/naomi.js</file>
+        </group>
     </open-files>
 </project-private>

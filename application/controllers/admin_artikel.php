@@ -32,7 +32,7 @@ class Admin_artikel extends CI_Controller {
 			}
 			else
 			{
-				$artikel=new artikel();
+				$artikel=new Artikel();
 				date_default_timezone_set("Asia/Jakarta");
 				$this->load->library('tanggal');
 				$this->load->library('hash');
@@ -90,12 +90,12 @@ class Admin_artikel extends CI_Controller {
 	}
 
 	function get_json_artikel(){
-		$artikel=new artikel();
+		$artikel=new Artikel();
 		$data=$artikel->get_json();
 		echo json_encode($data) ;
 	}
-	function delete_artikel($id_artikel){
-		$artikel=new artikel();
+	function delete_artikel($id_artikel=null){
+		$artikel=new Artikel();
 			
 		$data=$artikel->get_where(array('id_artikel' => $id_artikel));
 		$hapus_gambar='./assets/images/artikel/'.$data->gambar_artikel;
@@ -109,8 +109,8 @@ class Admin_artikel extends CI_Controller {
 		redirect("admin_artikel/");
 	}
 
-	function edit_artikel($id_artikel){
-		$artikel=new artikel();
+	function edit_artikel($id_artikel=null){
+		$artikel=new Artikel();
 		$artikel->where('id_artikel', $id_artikel)->get();
 
 		$data['aktif']='artikel';
@@ -137,7 +137,7 @@ class Admin_artikel extends CI_Controller {
 			}
 			else
 			{
-				$artikel=new artikel();
+				$artikel=new Artikel();
 				date_default_timezone_set("Asia/Jakarta");
 				$this->load->library('tanggal');
 				$tanggal = date("Y-m-d");

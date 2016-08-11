@@ -9,7 +9,7 @@ class Admin_promosi extends CI_Controller {
 	}
 
 	function index(){
-		$promosi=new promosi();
+		$promosi=new Promosi();
 		$promosi->get();
 		$data['aktif']='promosi';
 
@@ -32,7 +32,7 @@ class Admin_promosi extends CI_Controller {
 			}
 			else
 			{
-				$promosi=new promosi();
+				$promosi=new Promosi();
 				date_default_timezone_set("Asia/Jakarta");
 				$this->load->library('tanggal');
 				$this->load->library('hash');
@@ -90,12 +90,12 @@ class Admin_promosi extends CI_Controller {
 	}
 
 	function get_json_promosi(){
-		$promosi=new promosi();
+		$promosi=new Promosi();
 		$data=$promosi->get_json();
 		echo json_encode($data) ;
 	}
-	function delete_promosi($id_promosi){
-		$promosi=new promosi();
+	function delete_promosi($id_promosi=null){
+		$promosi=new Promosi();
 			
 		$data=$promosi->get_where(array('id_promosi' => $id_promosi));
 		$hapus_gambar='./assets/images/promosi/'.$data->gambar_promosi;
@@ -109,8 +109,8 @@ class Admin_promosi extends CI_Controller {
 		redirect("admin_promosi/");
 	}
 
-	function edit_promosi($id_promosi){
-		$promosi=new promosi();
+	function edit_promosi($id_promosi=null){
+		$promosi=new Promosi();
 		$promosi->where('id_promosi', $id_promosi)->get();
 
 		$data['aktif']='promosi';
@@ -137,7 +137,7 @@ class Admin_promosi extends CI_Controller {
 			}
 			else
 			{
-				$promosi=new promosi();
+				$promosi=new Promosi();
 				date_default_timezone_set("Asia/Jakarta");
 				$this->load->library('tanggal');
 				$tanggal = date("Y-m-d");

@@ -9,7 +9,7 @@ class Admin_produk extends CI_Controller {
 	}
 
 	function index(){
-		$produk=new produk();
+		$produk=new Produk();
 		$produk->get();
 		$data['aktif']='produk';
 
@@ -109,8 +109,8 @@ class Admin_produk extends CI_Controller {
 		redirect("admin_produk/");
 	}
 
-	function edit_produk($id_produk){
-		$produk=new produk();
+	function edit_produk($id_produk=null){
+		$produk=new Produk();
 		$produk->where('id_produk', $id_produk)->get();
 
 		$data['aktif']='produk';

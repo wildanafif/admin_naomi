@@ -11,7 +11,8 @@
         <link href="<?= base_url() ?>assets/bootstrap/css/bootstrap.min.css"
               rel="stylesheet" type="text/css" />
         <!-- Font Awesome Icons -->
-
+           <link href="<?= base_url() ?>assets/bootstrap/css/bootstrap-switch.min.css"
+              rel="stylesheet" type="text/css" />
         <link
             href="<?= base_url() ?>assets/plugins/fontawesome/css/font-awesome.min.css"
             rel="stylesheet" type="text/css" />
@@ -32,8 +33,7 @@
 
         <script src="<?= base_url() ?>assets/plugins/ckeditor/ckeditor.js"></script>
 
-        <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"
-              rel="stylesheet" type="text/css" />
+  
         <style>
             #progress {
                 position: relative;
@@ -62,9 +62,9 @@
     <body class="skin-blue sidebar-mini">
         <!-- Site wrapper -->
         <div class="wrapper"><header class="main-header"> <!-- Logo --> <a
-                    href="index2.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><b>P</b>S</span> <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><b>Pencarian </b>Skripsi</span> </a> <!-- Header Navbar: style can be found in header.less -->
+                    href="#" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>N</b>A</span> <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><b>Naomi </b>Administrator</span> </a> <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation"> <!-- Sidebar toggle button-->
                     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                         <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
@@ -111,20 +111,18 @@
                             style="border-bottom: 3px solid white; font-size: 20px;"> <i
                                     class="fa fa-home"></i> <span>&nbsp; Home</span> </a>
                         </li>
-
-                        <li
+                        
+                          <li
                             class="<?php
-                            if ($aktif == 'layanan') {
+                            if ($aktif == 'artikel') {
                                 echo "active";
                             }
-                            ?>"><a href="<?= base_url() ?>administrator_naomi/services"
-                            id="link_cari_keyword"
-                            style="border-bottom: 3px solid white; font-size: 20px;"> <i
-                                    class="fa fa-key"></i> <span>&nbsp; Service /Layanan</span> </a>
+                            ?>"
+                            style="border-bottom: 3px solid white; font-size: 20px;"><a
+                                href="<?= base_url() ?>admin_artikel"><i class="fa fa-newspaper-o"></i> <span>&nbsp;&nbsp;Post</span></a>
                         </li>
-
-
-                        <li
+                        
+                         <li
                             class="<?php
                             if ($aktif == 'produk') {
                                 echo "active";
@@ -134,6 +132,40 @@
                                 href="<?= base_url() ?>admin_produk" id="link_cari_judul"><i
                                     class="fa fa-book"></i> <span>&nbsp;&nbsp;Produk</span></a>
                         </li>
+                        
+                         <li
+                            class="<?php
+                            if ($aktif == 'galeri') {
+                                echo "active";
+                            }
+                            ?>"
+                            style="border-bottom: 3px solid white; font-size: 20px;"><a
+                                href="<?= base_url() ?>admin_galeri"><i class="fa fa-image"></i> <span>&nbsp;&nbsp;Galeri</span></a>
+                        </li>
+                        
+                        <li
+                            class="<?php
+                            if ($aktif == 'slider') {
+                                echo "active";
+                            }
+                            ?>"
+                            style="border-bottom: 3px solid white; font-size: 20px;"><a
+                                href="<?= base_url() ?>admin_slider"><i class="fa fa-laptop"></i> <span>&nbsp;&nbsp;Slider</span></a>
+                        </li>
+
+                        <li
+                            class="<?php
+                            if ($aktif == 'layanan') {
+                                echo "active";
+                            }
+                            ?>"><a href="<?= base_url() ?>administrator_naomi/services"
+                            id="link_cari_keyword"
+                            style="border-bottom: 3px solid white; font-size: 20px;"> <i
+                                    class="fa fa-key"></i> <span>&nbsp; Service / Layanan</span> </a>
+                        </li>
+
+
+                       
 
                         <li
                             class="<?php
@@ -142,41 +174,13 @@
                             }
                             ?>"
                             style="border-bottom: 3px solid white; font-size: 20px;"><a
-                                href="<?= base_url() ?>admin_promosi"><i class="fa fa-book"></i> <span>&nbsp;&nbsp;Promosi</span></a>
+                                href="<?= base_url() ?>admin_promosi"><i class="fa  fa-tags"></i> <span>&nbsp;&nbsp;Promosi</span></a>
                         </li>
 
-                        <li
-                            class="<?php
-                            if ($aktif == 'artikel') {
-                                echo "active";
-                            }
-                            ?>"
-                            style="border-bottom: 3px solid white; font-size: 20px;"><a
-                                href="<?= base_url() ?>admin_artikel"><i class="fa fa-book"></i> <span>&nbsp;&nbsp;Artikel</span></a>
-                        </li>
-                         <li
-                            class="<?php
-                            if ($aktif == 'galeri') {
-                                echo "active";
-                            }
-                            ?>"
-                            style="border-bottom: 3px solid white; font-size: 20px;"><a
-                                href="<?= base_url() ?>admin_galeri"><i class="fa fa-book"></i> <span>&nbsp;&nbsp;Galeri</span></a>
-                        </li>
+                      
+                       
 
-                        <li id="active_class_author"><a href="#" id="link_cari_author"
-                                                        style="border-bottom: 3px solid white; font-size: 20px;"> <i
-                                    class="fa fa-user"></i> <span>&nbsp;&nbsp;Author</span> </a></li>
-                        <li id="active_class_tahun"><a href="#" id="link_cari_tahun"
-                                                       style="border-bottom: 3px solid white; font-size: 20px;"> <i
-                                    class="fa fa-calendar-o"></i> <span>&nbsp;&nbsp;Tahun</span> </a></li>
-                        <li id="active_class_semua"><a href="#" id="link_cari_semua"
-                                                       style="border-bottom: 3px solid white; font-size: 20px;"> <i
-                                    class="fa fa-desktop"></i> <span>&nbsp;&nbsp;Semua data skripsi</span>
-                            </a></li>
-                        <li><a href="#" id="exit"
-                               style="border-bottom: 3px solid white; font-size: 20px;"> <i
-                                    class="fa fa-power-off"></i> <span>&nbsp;&nbsp;Keluar</span> </a></li>
+                      
 
                     </ul>
                 </section> <!-- /.sidebar --> </aside>

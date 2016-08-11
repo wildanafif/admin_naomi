@@ -177,6 +177,7 @@
     <script src="<?=base_url()?>assets/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<?=base_url()?>assets/bootstrap/js/bootstrap-switch.min.js" type="text/javascript"></script>
     <!-- SlimScroll -->
        <script src="<?=base_url()?>assets/plugins/table/bootstrap-table.js" type="text/javascript"></script>
     <script src="<?=base_url()?>assets/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>

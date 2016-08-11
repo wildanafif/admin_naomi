@@ -34,7 +34,7 @@ class Admin_galeri extends CI_Controller {
                 $this->session->set_flashdata('item', '<div class="alert alert-danger" role="alert">Gagal menambahkan, Sepertinya Masih ada yang kosong</div>');
                 redirect("admin_galeri");
             }
-            $galeri = new galeri();
+            $galeri = new Galeri();
             $cek = false;
             $nn = 0;
             $this->load->library('tanggal');
