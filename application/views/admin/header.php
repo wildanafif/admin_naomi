@@ -87,8 +87,7 @@
                                     <!-- Menu Body -->
 
                                     <!-- Menu Footer-->
-                                    <li class="user-footer"><a href="#" onclick="confirm_exit_window();"
-                                                               class="btn btn-warning btn-flat" style="color: #fff;">Keluar</a></li>
+                                    <li class="user-footer"><a href="<?php echo base_url('auth/logout')?>" class="btn btn-warning btn-flat" style="color: #fff;">Keluar</a></li>
                                 </ul>
                             </li>
                             <!-- Control Sidebar Toggle Button -->

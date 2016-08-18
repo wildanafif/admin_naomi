@@ -22,9 +22,8 @@
             </div>
             <div class="box-body">
                 <div id="toolbar" class="btn-group">
-                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#myModal"><span class="glyphicon glyphicon-plus"
-                                                 aria-hidden="true"></span> Tambah galeri</button>
+                    <a class="btn btn-primary" href="<?=base_url()?>admin_galeri/tambah_galeri" type="button" ><span class="glyphicon glyphicon-plus"
+                                                 aria-hidden="true"></span> Tambah galeri</a>
                 </div>
                 <div class="row">
                     <?php foreach ($galeri as $key) { ?>
@@ -203,8 +202,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary" name="submit"
-                            value="submit">Tambah</button>
+                    <button  type="" class="btn btn-primary" name="submit"
+                            value="submit" data-toggle="modal" data-target="#loading_upload">Tambah</button>
                 </div>
 
             </form>
@@ -233,7 +232,24 @@
     </div>
 </div>
 
-
+<!-- Modal -->
+<div class="modal fade" id="loading_upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="box box-danger">
+                <div class="box-header">
+                  <h3 class="box-title">Loading state</h3>
+                </div>
+                <div class="box-body">
+                  The body of the box
+                </div><!-- /.box-body -->
+                <!-- Loading (remove the following to stop the loading)-->
+                <div class="overlay">
+                  <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <!-- end loading -->
+              </div>
+  </div>
+</div>
 
 <?php
 $this->load->view('admin/footer');

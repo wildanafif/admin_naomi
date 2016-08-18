@@ -2520,11 +2520,13 @@ a:focus {
   text-overflow: ellipsis;
 }
 .product-list-in-box > .item {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 0;
-  border-bottom: 1px solid #f4f4f4;
+    -webkit-box-shadow: none;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #f4f4f4;
 }
+
 .product-list-in-box > .item:last-of-type {
   border-bottom-width: 0;
 }

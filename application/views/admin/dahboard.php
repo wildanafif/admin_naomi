@@ -122,6 +122,16 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-6 control-label" style="text-align: left ">Produk</label>
+                                <div class="col-sm-6">
+                                    <input type="checkbox" name="produk" <?php
+                                    if ($pengaturan->produk == 'on') {
+                                        echo 'checked';
+                                    }
+                                    ?> >
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-6 control-label" style="text-align: left ">Promosi</label>
                                 <div class="col-sm-6">
                                     <input type="checkbox" name="promosi" <?php
@@ -151,16 +161,7 @@
                                     ?> >
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-6 control-label" style="text-align: left ">Galeri</label>
-                                <div class="col-sm-6">
-                                    <input type="checkbox" name="galeri" <?php
-                                    if ($pengaturan->galeri == 'on') {
-                                        echo 'checked';
-                                    }
-                                    ?> >
-                                </div>
-                            </div>
+                          
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-6 control-label" style="text-align: left ">News atau Artikel</label>
                                 <div class="col-sm-6">

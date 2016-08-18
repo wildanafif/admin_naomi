@@ -6,14 +6,14 @@ $this->load->view("admin/header");?>
 <div
 	class="content-wrapper"><!-- Content Header (Page header) --> <section
 	class="content-header">
-<h1>Data artikel</h1>
+<h1>Data Postingan / News</h1>
 
 </section> <!-- Main content --> <section class="content"> <!-- Default box -->
 <?php echo $this->session->flashdata('item'); ?>
 
 <div class="box">
 <div class="box-header with-border">
-<h3 class="box-title">artikel</h3>
+<h3 class="box-title">Post</h3>
 <div class="box-tools pull-right">
 <button class="btn btn-box-tool" data-widget="collapse"
 	data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
@@ -25,7 +25,7 @@ $this->load->view("admin/header");?>
 <div id="toolbar" class="btn-group">
 <button type="button" class="btn btn-primary" data-toggle="modal"
 	data-target="#myModal"><span class="glyphicon glyphicon-plus"
-	aria-hidden="true"></span> Tambah artikel</button>
+	aria-hidden="true"></span> Tambah Posting</button>
 </div>
 <table id="all_data_json" data-toggle="table"
 	data-url="<?=base_url()?>admin_artikel/get_json_artikel"
@@ -37,10 +37,11 @@ $this->load->view("admin/header");?>
 		<tr>
 			<th data-formatter="numberFormatter">No</th>
 			<th data-field="title_artikel" data-sortable="true">Nama artikel</th>
+			<th data-field="dilihat" data-sortable="true">Dilihat</th>
 			<th data-field="gambar_artikel"
 				data-formatter="format_gambar_tabel_artikel">Gambar</th>
 
-			<th data-field="id_artikel" data-formatter="artikel_action"
+			<th data-width="300" data-field="id_artikel | url" data-formatter="artikel_action"
 				data-sortable="true"></th>
 
 		</tr>
@@ -66,25 +67,41 @@ $this->load->view("admin/header");?>
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal"
 	aria-label="Close"><span aria-hidden="true">&times;</span></button>
-<h4 class="modal-title" id="myModalLabel">Tambah artikel</h4>
+<h4 class="modal-title" id="myModalLabel">Tambah Posting</h4>
 </div>
 <div class="modal-body">
-<div class="form-group"><label for="judul_layanan">Judul artikel</label>
+<div class="form-group"><label for="judul_layanan">Judul Posting</label>
 <input type="text" class="form-control" name="judul_artikel"
 	placeholder="Nama artikel" required></div>
-<div class="form-group"><label for="isi_layanan">Deskripsi artikel</label>
+<div class="form-group"><label for="isi_layanan">Deskripsi Posting</label>
 <textarea class="ckeditor" name="deskripsi_artikel" id="editor1"
-	required></textarea> <script type="text/javascript">
-                                        CKEDITOR.replace('editor1',
-                                                {
-                                                    filebrowserBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php',
-                                                    filebrowserImageBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Images',
-                                                    filebrowserFlashBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Flash',
-                                                    filebrowserUploadUrl: '<?php echo site_url(); ?>assets/admin/plugins/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
-                                                    filebrowserImageUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
-                                                });
-                                    </script></div>
+	required></textarea> 
+	  <script type="text/javascript">
+			                                    	CKEDITOR.addCss( 'img{ width: 100% }' );
+			                                        CKEDITOR.replace('editor1',
+			                                                {	disallowedContent: 'img{width,height};',
+			                                                    filebrowserBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php',
+			                                                    filebrowserImageBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Images',
+			                                                    filebrowserFlashBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Flash',
+			                                                    filebrowserUploadUrl: '<?php echo site_url(); ?>assets/admin/plugins/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
+			                                                    filebrowserImageUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images',
+			                                                    filebrowserFlashUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash',
+			                                                    height:['650px'],
+			                                                    on: {
+			                                                            instanceReady: function() {
+			                                                                this.dataProcessor.htmlFilter.addRules( {
+			                                                                    elements: {
+			                                                                        img: function( el ) {
+			                                                                            if ( !el.attributes.alt )
+			                                                                                el.attributes.style = 'width:100%;';
+			                                                                        }
+			                                                                    }
+			                                                                } );            
+			                                                            }
+			                                                        }
+			                                                });
+			                                    </script>
+</div>
 <div class="form-group"><label for="exampleInputFile">Gambar artikel</label>
 <input type="file" id="exampleInputFile" name="gambar"></div>
 

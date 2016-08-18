@@ -38,9 +38,10 @@ $this->load->view("admin/header");?>
                         <tr>
                             <th data-formatter="numberFormatter" >No</th>
                             <th data-field="title_produk" data-sortable="true">Nama Produk</th>
+                            <th data-field="dilihat" data-sortable="true">Dilihat</th>
                             <th data-field="gambar_produk"  data-formatter="format_gambar_tabel_produk">Gambar</th>
                            
-                            <th data-field="id_produk" data-formatter="product_action" data-sortable="true"></th>
+                            <th data-field="id_produk | url " data-formatter="product_action" data-sortable="true"></th>
                             
                         </tr>
                         </thead>
@@ -74,17 +75,31 @@ $this->load->view("admin/header");?>
           <div class="form-group">
             <label for="isi_layanan">Deskripsi Produk</label>
              <textarea class="ckeditor" name="deskripsi_produk" id="editor1" required ></textarea>
-                                    <script type="text/javascript">
-                                        CKEDITOR.replace('editor1',
-                                                {
-                                                    filebrowserBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php',
-                                                    filebrowserImageBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Images',
-                                                    filebrowserFlashBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Flash',
-                                                    filebrowserUploadUrl: '<?php echo site_url(); ?>assets/admin/plugins/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
-                                                    filebrowserImageUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
-                                                });
-                                    </script>
+                                   <script type="text/javascript">
+			                                    	CKEDITOR.addCss( 'img{ width: 100% }' );
+			                                        CKEDITOR.replace('editor1',
+			                                                {	disallowedContent: 'img{width,height};',
+			                                                    filebrowserBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php',
+			                                                    filebrowserImageBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Images',
+			                                                    filebrowserFlashBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Flash',
+			                                                    filebrowserUploadUrl: '<?php echo site_url(); ?>assets/admin/plugins/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
+			                                                    filebrowserImageUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images',
+			                                                    filebrowserFlashUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash',
+			                                                    height:['650px'],
+			                                                    on: {
+			                                                            instanceReady: function() {
+			                                                                this.dataProcessor.htmlFilter.addRules( {
+			                                                                    elements: {
+			                                                                        img: function( el ) {
+			                                                                            if ( !el.attributes.alt )
+			                                                                                el.attributes.style = 'width:100%;';
+			                                                                        }
+			                                                                    }
+			                                                                } );            
+			                                                            }
+			                                                        }
+			                                                });
+			                                    </script>
 
           </div>
           <div class="form-group">

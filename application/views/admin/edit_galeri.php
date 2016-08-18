@@ -131,7 +131,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                         <input type="text" name="id_galeri" value="<?php echo $id_galeri; ?>">
+                         <input type="hidden" name="id_galeri" value="<?php echo $id_galeri; ?>">
                         <label for="exampleInputFile">Gambar galeri</label>
                         <div class="panel panel-default panel-body">
                             <div class="row">

@@ -40,7 +40,7 @@ $this->load->view("admin/header");?>
                             <th data-field="title_layanan" data-sortable="true">Judul</th>
                             <th data-field="gambar"  data-formatter="format_gambar_tabel">Gambar</th>
                            
-                            <th data-field="id_layanan" data-formatter="serviceAction" data-sortable="true"></th>
+                            <th data-field="id_layanan | url" data-formatter="serviceAction" data-sortable="true"></th>
                             
                         </tr>
                         </thead>
@@ -75,16 +75,30 @@ $this->load->view("admin/header");?>
             <label for="isi_layanan">Isi</label>
              <textarea class="ckeditor" name="isi_layanan" id="editor1" required ></textarea>
                                     <script type="text/javascript">
-                                        CKEDITOR.replace('editor1',
-                                                {
-                                                    filebrowserBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php',
-                                                    filebrowserImageBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Images',
-                                                    filebrowserFlashBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Flash',
-                                                    filebrowserUploadUrl: '<?php echo site_url(); ?>assets/admin/plugins/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
-                                                    filebrowserImageUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
-                                                });
-                                    </script>
+			                                    	CKEDITOR.addCss( 'img{ width: 100% }' );
+			                                        CKEDITOR.replace('editor1',
+			                                                {	disallowedContent: 'img{width,height};',
+			                                                    filebrowserBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php',
+			                                                    filebrowserImageBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Images',
+			                                                    filebrowserFlashBrowseUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/browse.php?type=Flash',
+			                                                    filebrowserUploadUrl: '<?php echo site_url(); ?>assets/admin/plugins/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
+			                                                    filebrowserImageUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images',
+			                                                    filebrowserFlashUploadUrl: '<?php echo site_url(); ?>assets/plugins/kcfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash',
+			                                                    height:['650px'],
+			                                                    on: {
+			                                                            instanceReady: function() {
+			                                                                this.dataProcessor.htmlFilter.addRules( {
+			                                                                    elements: {
+			                                                                        img: function( el ) {
+			                                                                            if ( !el.attributes.alt )
+			                                                                                el.attributes.style = 'width:100%;';
+			                                                                        }
+			                                                                    }
+			                                                                } );            
+			                                                            }
+			                                                        }
+			                                                });
+			                                    </script>
 
           </div>
           <div class="form-group">
